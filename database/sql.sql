@@ -1,7 +1,6 @@
-DROP DATABASE test;
-CREATE DATABASE test;
+CREATE DATABASE maratona_fotografica;
 
-USE test;
+USE maratona_fotografica;
 
 CREATE TABLE IF NOT EXISTS `user` (
 	`registration` INTEGER AUTO_INCREMENT,
