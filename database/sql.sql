@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `photo` (
     `path` VARCHAR(255) NOT NULL,
     `group_id` INTEGER NOT NULL,
     `theme_id` INTEGER NOT NULL,
+    UNIQUE(`group_id`, `theme_id`),
     PRIMARY KEY(`id`),
     FOREIGN KEY(`group_id`) REFERENCES `group`(`id`),
     FOREIGN KEY(`theme_id`) REFERENCES `theme`(`id`)
@@ -50,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `note` (
     `note` FLOAT NOT NULL,
     `user_registration` INTEGER NOT NULL,
     `photo_id` INTEGER NOT NULL,
+    UNIQUE(`user_registration`, `photo_id`),
     PRIMARY KEY(`id`),
     FOREIGN KEY(`user_registration`) REFERENCES `user`(`registration`),
     FOREIGN KEY(`photo_id`) REFERENCES `photo`(`id`)
